@@ -10,6 +10,7 @@
     <link href="libs/css/syntaxhighlighter2/shThemeDefault.css" rel="stylesheet" type="text/css" />
 
     <script type="text/javascript" src="libs/js/tinymce4/tinymce.min.js"></script>
+    <script type="text/javascript" src="libs/js/tinymce4/plugins/preview/plugin.js"></script>
     <script type="text/javascript">
 //        tinyMCE.init({
 //            mode : "textareas",
@@ -26,14 +27,17 @@ tinymce.init({
         "advlist autolink lists link image charmap print preview hr anchor pagebreak",
         "searchreplace wordcount visualblocks visualchars code fullscreen",
         "insertdatetime media nonbreaking save table contextmenu directionality",
-        "emoticons template paste"
+        "emoticons template paste syntaxhl"
     ],
     toolbar1: "insertfile undo redo | styleselect | bold italic | alignleft aligncenter alignright alignjustify | bullist numlist outdent indent | link image",
-    toolbar2: "print preview media | forecolor backcolor emoticons | syntaxhl",
+    toolbar2: "print media | forecolor backcolor emoticons | syntaxhl preview",
     templates: [
         {title: 'Test template 1', content: 'Test 1'},
         {title: 'Test template 2', content: 'Test 2'}
     ],
+    plugin_preview_width: "800",
+    content_css: ["libs/css/syntaxhighlighter2/shCore.css", "libs/css/syntaxhighlighter2/shThemeDefault.css"],
+    content_js: ["libs/js/syntaxhighlighter2/shCore.js", "libs/js/syntaxhighlighter2/shBrushJava.js", "libs/js/syntaxhighlighter2/shBrushJScript.js", "libs/js/tinymce4/plugins/preview/highlight.js"]
 });
   </script>
 </head>
@@ -59,6 +63,7 @@ tinymce.init({
                                                                               }
                                                                               <br /><br /><br /></pre>
   <script type="text/javascript">
+      var origAbout = SyntaxHighlighter.config.strings.aboutDialog;
       SyntaxHighlighter.config.clipboardSwf = 'libs/js/syntaxhighlighter2/clipboard.swf';
       SyntaxHighlighter.config.strings = {
                expandSource : '展开代码',
@@ -70,7 +75,7 @@ tinymce.init({
                noBrush: '不能找到刷子: ',
                brushNotHtmlScript: '刷子没有配置html-script选项',
                alert : "",
-               aboutDialog: '<div>ooo</div>'
+               aboutDialog: origAbout
       };
        SyntaxHighlighter.all();
   </script>
