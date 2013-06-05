@@ -10,6 +10,7 @@
     <link href="libs/css/syntaxhighlighter2/shThemeDefault.css" rel="stylesheet" type="text/css" />
 
     <script type="text/javascript" src="libs/js/tinymce4/tinymce.min.js"></script>
+    <script type="text/javascript" src="libs/js/pinyin.js"></script>
 <!--     <script type="text/javascript" src="libs/js/tinymce4/plugins/preview/plugin.js"></script> -->
     <script type="text/javascript">
 //        tinyMCE.init({
@@ -44,6 +45,13 @@ tinymce.init({
   </script>
 </head>
 <body> 
+<div>
+    <p>随便截个字的拼音</p>
+    <script>
+        document.write(PinYin.convertPYs("随便截个字的拼音"));
+    </script>
+</div>
+
     <h1>jfo</h1>
     <div style="width:700px; height:500px;">
   <textarea name="content" style="width:600px; height:auto;" >This is some content that will be editable with TinyMCE.</textarea>
